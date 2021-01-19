@@ -12,10 +12,14 @@
     Osteria N.100,se la <span>figa</span> andasse a vento... quanti <span>cazzi</span> in alto mare tu vedresti navigare dammela a me biondina dammela a me biondaa...<br>
     Osteria degli untori, hanno tutti il <span>cazzo</span> fuori, e li danno alle colleghe per non farsi delle <span>seghe</span> dammela a me biondina dammela a me biondaaaaa.
   ";
-  $words_to_replace = [
-    "/\binculano\b/", "/\bporcherie\b/", "/\bditalino\b/", "/\bderetano\b/", "/\bfiga\b/", "/\bcazzo\b/", "/\bcazzi\b/", "/\bculo\b/", "/\bano\b/", "/\bseghe\b/"
-  ];
-  $censured_text = preg_replace($words_to_replace, $_GET["word"], $text);
+  $words_to_replace = ["inculano", "porcherie", "ditalino", "deretano", "figa", "cazzo", "cazzi", "culo", "ano", "seghe"];
+
+  $words_to_replace_new = array_map(
+    function($value) {
+    return "/\b".$value."\b/";
+  }, $words_to_replace);
+
+  $censured_text = preg_replace($words_to_replace_new, $_GET["word"], $text);
  ?>
 
  <!DOCTYPE html>
@@ -39,7 +43,7 @@
      <p><?php echo $text; ?></p>
      <div class="length">
       <span><?php echo strlen($text); ?></span>
-       <span>Caratteri</span>
+      <span>Caratteri</span>
      </div>
    </div>
 
