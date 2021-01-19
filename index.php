@@ -13,9 +13,9 @@
     Osteria degli untori, hanno tutti il <span>cazzo</span> fuori, e li danno alle colleghe per non farsi delle <span>seghe</span> dammela a me biondina dammela a me biondaaaaa.
   ";
   $words_to_replace = [
-    "inculano", "porcherie", "ditalino", "deretano", "figa", "cazzo", "cazzi", "culo", "ano", "seghe"
+    "/\binculano\b/", "/\bporcherie\b/", "/\bditalino\b/", "/\bderetano\b/", "/\bfiga\b/", "/\bcazzo\b/", "/\bcazzi\b/", "/\bculo\b/", "/\bano\b/", "/\bseghe\b/"
   ];
-  $censured_text = str_replace($words_to_replace, $_GET["word"], $text);
+  $censured_text = preg_replace($words_to_replace, $_GET["word"], $text);
  ?>
 
  <!DOCTYPE html>
