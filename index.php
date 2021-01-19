@@ -13,7 +13,7 @@ Osteria N.100,se la <span>figa</span> andasse a vento... quanti <span>cazzi</spa
 Osteria degli untori, hanno tutti il <span>cazzo</span> fuori, e li danno alle colleghe per non farsi delle <span>seghe</span> dammela a me biondina dammela a me biondaaaaa.
 ";
   $words_to_replace = [
-    "inculano", "porcherie", "ditalino", "deretano", "figa", "cazzo", "cazzi", "culo", " ano", "seghe"
+    "inculano", "porcherie", "ditalino", "deretano", "figa", "cazzo", "cazzi", "culo", "/\bano\b/", "seghe"
   ];
   $censured_text = str_replace($words_to_replace, $_GET["word"], $text);
  ?>
