@@ -20,7 +20,7 @@
   }, $words_to_replace);
 
   $censured_text = preg_replace($words_to_replace_new, $_GET["word"], $text);
- ?>
+?>
 
  <!DOCTYPE html>
  <html lang="en">
